@@ -50,7 +50,7 @@ class Block {
             difficulty = previousBlock.time + MINE_RATE > time ? difficulty + 1 : difficulty - 1;
             hash = SHA256(previousHash + time + data + nonce + difficulty).toString();
 
-        } while( hash.substring(0, difficulty) != "0".repeat(difficulty) );
+        } while ( hash.substring(0, difficulty) != "0".repeat(difficulty) );
 
         return new this(time, previousHash, hash, data, nonce, difficulty);
 
@@ -73,3 +73,5 @@ class Block {
 
 
 }
+
+module.exports = Block;
