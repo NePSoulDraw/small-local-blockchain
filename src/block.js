@@ -1,5 +1,5 @@
 
-const SHA256 = require('crypto/sha256');
+const SHA256 = require('crypto-js/sha256');
 
 const DIFFICULTY = 3;
 
@@ -60,14 +60,15 @@ class Block {
 
         const { time, previousHash, hash, data, nonce, difficulty } = this;
 
-        return `Block - 
+        return `        -----------------------------------------------------
+            Block -> 
                 Time: ${time}
                 Previous hash: ${previousHash}
                 Hash: ${hash}
                 Data: ${data}
                 Nonce: ${nonce}
                 Difficulty: ${difficulty}
-                ------------------------------------`
+        -----------------------------------------------------`
 
     }
 
